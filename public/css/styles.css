@@ -17682,9 +17682,6 @@ body {
   height: fit-content;
 }
 #layoutDefault #layoutDefault_content {
-  min-width: 0;
-  -webkit-box-flex: 1;
-          flex-grow: 1;
   height: fit-content;
 }
 #layoutDefault #layoutDefault_footer {
