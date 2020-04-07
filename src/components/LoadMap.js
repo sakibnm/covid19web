@@ -39,7 +39,7 @@ class LoadMap extends Component {
         };
 
         return(
-            <div className="layoutDefault-content">
+            <div className="layoutDefault_content">
                 <VectorMap
                     map={"world_mill"}
                     backgroundColor="" //change it to ocean blue: #0077be
