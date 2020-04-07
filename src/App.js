@@ -81,7 +81,7 @@ class App extends Component{
 
         this.state.isFetching = true;
 
-        fetch('http://107.152.37.166:5000/')
+        fetch('localhost:5000/')
             .then(results => {
                 // console.log(results.json())
                 this.json = results.json()
