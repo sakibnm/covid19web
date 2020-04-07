@@ -80,44 +80,44 @@ class LoadMap extends Component {
                     }}
                     zoomOnScroll = {true}
                     zoomAnimate={true}
-                    labels={
-                        {
-                            regions: {
-                                render: function (code) {
-                                    // var doNotShow = ['US-RI', 'US-DC', 'US-DE', 'US-MD'];
-
-                                    return code;
-
-                                },
-                                offsets: function (code) {
-                                    return {
-                                        'US': [-270, 25],
-                                        'FR': [60, -55],
-                                        'IN': [-10, 0]
-
-                                    }[code];
-                                }
-                            }
-                        }
-                    }
-                    regionLabelStyle={
-                        {
-                            initial: {
-                                'font-family': 'Verdana',
-                                'font-size': '8',
-                                'font-weight': 'regular',
-                                cursor: 'default',
-                                fill: 'black'
-                            },
-                            hover: {
-                                cursor: 'pointer',
-                                'font-family': 'Verdana',
-                                'font-size': '12',
-                                'font-weight': 'regular',
-                                fill: 'red'
-                            }
-                        }
-                    }
+                    // labels={
+                    //     {
+                    //         regions: {
+                    //             render: function (code) {
+                    //                 // var doNotShow = ['US-RI', 'US-DC', 'US-DE', 'US-MD'];
+                    //
+                    //                 return code;
+                    //
+                    //             },
+                    //             offsets: function (code) {
+                    //                 return {
+                    //                     'US': [-270, 25],
+                    //                     'FR': [60, -55],
+                    //                     'IN': [-10, 0]
+                    //
+                    //                 }[code];
+                    //             }
+                    //         }
+                    //     }
+                    // }
+                    // regionLabelStyle={
+                    //     {
+                    //         initial: {
+                    //             'font-family': 'Verdana',
+                    //             'font-size': '8',
+                    //             'font-weight': 'regular',
+                    //             cursor: 'default',
+                    //             fill: 'black'
+                    //         },
+                    //         hover: {
+                    //             cursor: 'pointer',
+                    //             'font-family': 'Verdana',
+                    //             'font-size': '12',
+                    //             'font-weight': 'regular',
+                    //             fill: 'red'
+                    //         }
+                    //     }
+                    // }
                 />
             </div>
         )
