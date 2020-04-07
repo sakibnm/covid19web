@@ -28,6 +28,7 @@ class LoadMap extends Component {
         // console.log(this.state.mapData)
 
         const handleClick = (e, countryCode) => {
+            // console.log(selectedRegions)
             for (var i=0;i< this.itemList.length;i++){
                 let item = this.itemList[i]
                 if (getCode(item.getCountry()) === countryCode){
@@ -38,7 +39,7 @@ class LoadMap extends Component {
         };
 
         return(
-            <div className="map">
+            <div className="layoutDefault-content">
                 <VectorMap
                     map={"world_mill"}
                     backgroundColor="" //change it to ocean blue: #0077be
@@ -52,18 +53,19 @@ class LoadMap extends Component {
                         initial: {
                             fill: "#e4e4e4",
                             "fill-opacity": 0.9,
-                            stroke: "none",
+                            stroke: "1px",
                             "stroke-width": 0,
                             "stroke-opacity": 0
                         },
                         hover: {
-                            "fill-opacity": 0.8,
-                            cursor: "pointer"
+                            fill: "#0403ee",
+                            "fill-opacity": 0.5,
+
                         },
                         selected: {
+
                             fill: "#2938bc" //color for the clicked country
-                        },
-                        selectedHover: {}
+                        }
                     }}
                     regionsSelectableOne={true}
                     regionsSelectable={true}
