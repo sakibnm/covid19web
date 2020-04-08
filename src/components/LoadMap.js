@@ -15,14 +15,14 @@ class LoadMap extends Component {
 
 
     render() {
-        console.log(this.state.itemList)
+        // console.log(this.state.itemList)
         const { getCode, getName } = require('country-list');
 
         setTimeout(()=> { Array.from(document.getElementsByClassName("jvectormap-tip")).forEach((el) => { el.style.display = 'none' }); },100);
 
         for (var i=0;i<this.state.itemList.length;i++){
             let item = this.state.itemList[i];
-            console.log(this.state.itemList)
+            // console.log(this.state.itemList)
             // this.setState({...this.state, isFetching: false,itemList: this.itemList})
             this.state.mapData[getCode(item.getCountry())] = item.getConfirmed()
             this.state.countries[i] = getCode(item.getCountry())

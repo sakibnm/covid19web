@@ -2,10 +2,17 @@ import React, {Component} from 'react';
 import LoadMap from './components/LoadMap';
 import './App.css';
 import SkeletonLoader from "tiny-skeleton-loader-react";
+import { Container, Header, List } from "semantic-ui-react";
 import Item from "./components/Item";
 import VitalStats from "./components/VitalStats";
 import LoadEmptyMap from "./components/LoadEmptyMap";
+import SearchBar from "./components/SearchBar";
+import SearchEmptyBar from "./components/SearchEmptyBar";
 
+const styleLink = document.createElement("link");
+styleLink.rel = "stylesheet";
+styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+document.head.appendChild(styleLink);
 
 class App extends Component{
     state = {
@@ -14,11 +21,16 @@ class App extends Component{
         json: null,
         dataList: [],
         itemList: [Item],
-        selectedItem: ""
+        selectedItem: "",
     }
 
     callbackSelectedCountry = (selectedItemData) => {
         this.setState({selectedItem: selectedItemData})
+    }
+
+    callbackSearchCountry = (searchedItemData) => {
+        this.setState({selectedItem: searchedItemData})
+        console.log(searchedItemData)
     }
 
     componentDidMount() {
@@ -31,7 +43,6 @@ class App extends Component{
         this.timer = null;
     }
 
-
     render() {
         console.log(this.state.selectedItem)
         return (
@@ -41,6 +52,15 @@ class App extends Component{
                         <a className="navbar-brand text-gray-100" href="index.html">Covid19WorldMap</a>
                     </div>
                 </nav>
+                <div className="container-vspace-4">
+
+                </div>
+                <div className="container">
+                    {this.state.isFetching ?
+                        <SearchEmptyBar/>:
+                        <SearchBar callBackSearchCountry = {this.callbackSearchCountry} itemList={this.state.itemList}></SearchBar>
+                    }
+                </div>
                 <div className="container-vspace-4">
 
                 </div>
@@ -81,7 +101,7 @@ class App extends Component{
                         <VitalStats itemSend = {this.state.selectedItem}></VitalStats>
                     }
                 </div>
-                <div>{console.log(this.state.itemList)}</div>
+                {/*<div>{console.log(this.state.itemList)}</div>*/}
 
 
             </div>
@@ -360,7 +380,7 @@ class App extends Component{
                 this.setState({...this.state, isFetching: false,itemList: this.itemList})
             }).then(itemsArray => {
             // this.state.itemList = this.itemList;
-            console.log(this.state.itemList)
+            // console.log(this.state.itemList)
             this.state.isFetching = false;
         })
     }
