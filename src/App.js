@@ -61,7 +61,7 @@ class App extends Component{
                         <div/>
                     }
                 </div>
-                <div id="mapContainer">
+                <div className="container">
                     {this.state.isFetching ?
                         <LoadEmptyMap/>
                         : <LoadMap callBackCountry = {this.callbackSelectedCountry} itemList={this.state.itemList}/>

@@ -40,10 +40,9 @@ class LoadMap extends Component {
         };
 
         return(
-            <div id="map" className="layoutDefault_map">
-                <div>
+            <div id="map" className="mapContainer">
 
-                </div>
+                <div>
                 <VectorMap
                     map={"world_mill"}
 
@@ -73,6 +72,7 @@ class LoadMap extends Component {
                             fill: "#2938bc" //color for the clicked country
                         }
                     }}
+                    panOnDrag={false}
                     regionsSelectableOne={true}
                     regionsSelectable={true}
                     series={{
@@ -126,6 +126,7 @@ class LoadMap extends Component {
                     //     }
                     // }
                 />
+                </div>
             </div>
         )
     }

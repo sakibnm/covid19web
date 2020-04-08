@@ -17723,7 +17723,8 @@ body {
   display: -webkit-flex;
   -webkit-box-align: center;
   ;
-  min-width: 960px;
+  width: 100%;
+  overflow-x: scroll;
 }
 #layoutDefault #layoutDefault_footer {
   min-width: 0;
