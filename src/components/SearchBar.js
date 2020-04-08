@@ -26,7 +26,8 @@ import Item from "./Item";
     // { key: 'be', value: 'be', flag: 'be', text: 'Belgium' },
     // { key: 'bz', value: 'bz', flag: 'bz', text: 'Belize' },
     // { key: 'bj', value: 'bj', flag: 'bj', text: 'Benin' },
-
+const ASC = 'ascending';
+const DSC = 'descending';
 
 class SearchBar extends Component{
     state = {
@@ -50,6 +51,21 @@ class SearchBar extends Component{
             // console.log(dict)
             this.state.countryOptions[i] = dict
         }
+
+        this.state.countryOptions = this.state.countryOptions.sort((a,b) => sortByText(a,b, ASC))
+
+        function sortByText(a, b, order = ASC) {
+            // console.log(a['text']+" "+b['text'])
+            const diff = a['text'].toLowerCase().localeCompare(b['text'].toLowerCase());
+
+            if (order === ASC) {
+                return diff;
+            }
+
+            return -1 * diff;
+        }
+
+        // console.log(this.state.countryOptions.sort((a,b) => sortByText(a,b, ASC)))
         // console.log(this.state.countryOptions)
         const { value } = this.state;
         this.handleChange = (e, { value }) => {
