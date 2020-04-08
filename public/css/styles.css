@@ -17717,7 +17717,12 @@ body {
   -webkit-box-align: center;
   width: 100%;
   min-height: 320px;
+  overflow: scroll;
   /*-webkit-overflow-scrolling: auto;*/
+}
+#map{
+  width: 960px;
+  height: 400px;
 }
 
 #layoutDefault #layoutDefault_footer {

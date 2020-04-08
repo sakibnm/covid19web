@@ -12,7 +12,7 @@ class LoadEmptyMap extends Component {
                         backgroundColor="" //change it to ocean blue: #0077be
                         containerStyle={{
                             width: "100%",
-                            height: "100%"
+                            height: "520px"
                         }}
                         containerClassName="map"
                         regionStyle={{

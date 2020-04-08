@@ -42,7 +42,7 @@ class LoadMap extends Component {
         return(
             <div id="mapContainer">
 
-                <div className="map">
+                <div id="map">
                 <VectorMap
                     map={"world_mill"}
 

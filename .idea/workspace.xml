@@ -83,7 +83,7 @@
       <workItem from="1586221434439" duration="12977000" />
       <workItem from="1586298815973" duration="18000" />
       <workItem from="1586298900498" duration="2304000" />
-      <workItem from="1586303344493" duration="11898000" />
+      <workItem from="1586303344493" duration="12485000" />
     </task>
     <task id="LOCAL-00001" summary="Pre-ALPHA">
       <created>1586231877288</created>
@@ -211,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586323789160</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Pre-alpha 0.2: Map on Phone screen should display fine...">
+      <created>1586363020174</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1586363020174</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,34 +243,34 @@
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
     <state x="1634" y="460" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1366@0.23.2560.1366" timestamp="1586219251554" />
-    <state x="1496" y="309" key="CommitChangelistDialog2" timestamp="1586323788794">
+    <state x="1496" y="309" key="CommitChangelistDialog2" timestamp="1586363019938">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
-    <state x="1496" y="309" key="CommitChangelistDialog2/0.23.2560.1366@0.23.2560.1366" timestamp="1586323788794" />
+    <state x="1496" y="309" key="CommitChangelistDialog2/0.23.2560.1366@0.23.2560.1366" timestamp="1586363019938" />
     <state x="1768" y="607" key="Github.ShareDialog" timestamp="1586231966780">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
     <state x="1768" y="607" key="Github.ShareDialog/0.23.2560.1366@0.23.2560.1366" timestamp="1586231966780" />
-    <state width="1295" height="392" key="GridCell.Tab.0.bottom" timestamp="1586361472142">
+    <state width="1295" height="392" key="GridCell.Tab.0.bottom" timestamp="1586363378411">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
-    <state width="1295" height="392" key="GridCell.Tab.0.bottom/0.23.2560.1366@0.23.2560.1366" timestamp="1586361472142" />
-    <state width="1295" height="392" key="GridCell.Tab.0.center" timestamp="1586361472142">
+    <state width="1295" height="392" key="GridCell.Tab.0.bottom/0.23.2560.1366@0.23.2560.1366" timestamp="1586363378411" />
+    <state width="1295" height="392" key="GridCell.Tab.0.center" timestamp="1586363378410">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
-    <state width="1295" height="392" key="GridCell.Tab.0.center/0.23.2560.1366@0.23.2560.1366" timestamp="1586361472142" />
-    <state width="1295" height="392" key="GridCell.Tab.0.left" timestamp="1586361472141">
+    <state width="1295" height="392" key="GridCell.Tab.0.center/0.23.2560.1366@0.23.2560.1366" timestamp="1586363378410" />
+    <state width="1295" height="392" key="GridCell.Tab.0.left" timestamp="1586363378409">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
-    <state width="1295" height="392" key="GridCell.Tab.0.left/0.23.2560.1366@0.23.2560.1366" timestamp="1586361472141" />
-    <state width="1295" height="392" key="GridCell.Tab.0.right" timestamp="1586361472142">
+    <state width="1295" height="392" key="GridCell.Tab.0.left/0.23.2560.1366@0.23.2560.1366" timestamp="1586363378409" />
+    <state width="1295" height="392" key="GridCell.Tab.0.right" timestamp="1586363378410">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
-    <state width="1295" height="392" key="GridCell.Tab.0.right/0.23.2560.1366@0.23.2560.1366" timestamp="1586361472142" />
-    <state x="1502" y="435" key="Vcs.Push.Dialog.v2" timestamp="1586323790849">
+    <state width="1295" height="392" key="GridCell.Tab.0.right/0.23.2560.1366@0.23.2560.1366" timestamp="1586363378410" />
+    <state x="1502" y="435" key="Vcs.Push.Dialog.v2" timestamp="1586363021822">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
-    <state x="1502" y="435" key="Vcs.Push.Dialog.v2/0.23.2560.1366@0.23.2560.1366" timestamp="1586323790849" />
+    <state x="1502" y="435" key="Vcs.Push.Dialog.v2/0.23.2560.1366@0.23.2560.1366" timestamp="1586363021822" />
     <state x="1561" y="336" width="670" height="676" key="search.everywhere.popup" timestamp="1586217629042">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
