@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1060a7f0-ff75-45e5-9c24-8d4656fda3c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoadEmptyMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoadEmptyMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LoadMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoadMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VitalStats.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VitalStats.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +83,7 @@
       <workItem from="1586221434439" duration="12977000" />
       <workItem from="1586298815973" duration="18000" />
       <workItem from="1586298900498" duration="2304000" />
-      <workItem from="1586303344493" duration="7531000" />
+      <workItem from="1586303344493" duration="7730000" />
     </task>
     <task id="LOCAL-00001" summary="Pre-ALPHA">
       <created>1586231877288</created>
@@ -183,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586319568265</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Pre-alpha 0.2: Map on Phone screen should display fine...">
+      <created>1586320198867</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1586320198867</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +199,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Pre-ALPHA" />
     <MESSAGE value="Pre-alpha 0.2: Removed ugly pointer tips...." />
-    <option name="LAST_COMMIT_MESSAGE" value="Pre-alpha 0.2: Removed ugly pointer tips...." />
+    <MESSAGE value="Pre-alpha 0.2: Map on Phone screen should display fine..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Pre-alpha 0.2: Map on Phone screen should display fine..." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1366" y="368" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586299387990">
@@ -207,10 +215,10 @@
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
     <state x="1634" y="460" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1366@0.23.2560.1366" timestamp="1586219251554" />
-    <state x="1496" y="309" key="CommitChangelistDialog2" timestamp="1586319568014">
+    <state x="1496" y="309" key="CommitChangelistDialog2" timestamp="1586320198613">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
-    <state x="1496" y="309" key="CommitChangelistDialog2/0.23.2560.1366@0.23.2560.1366" timestamp="1586319568014" />
+    <state x="1496" y="309" key="CommitChangelistDialog2/0.23.2560.1366@0.23.2560.1366" timestamp="1586320198613" />
     <state x="1768" y="607" key="Github.ShareDialog" timestamp="1586231966780">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
@@ -231,10 +239,10 @@
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
     <state width="1295" height="392" key="GridCell.Tab.0.right/0.23.2560.1366@0.23.2560.1366" timestamp="1586317626009" />
-    <state x="1502" y="435" key="Vcs.Push.Dialog.v2" timestamp="1586319569729">
+    <state x="1502" y="435" key="Vcs.Push.Dialog.v2" timestamp="1586320200816">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
-    <state x="1502" y="435" key="Vcs.Push.Dialog.v2/0.23.2560.1366@0.23.2560.1366" timestamp="1586319569729" />
+    <state x="1502" y="435" key="Vcs.Push.Dialog.v2/0.23.2560.1366@0.23.2560.1366" timestamp="1586320200816" />
     <state x="1561" y="336" width="670" height="676" key="search.everywhere.popup" timestamp="1586217629042">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>

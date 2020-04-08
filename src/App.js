@@ -41,7 +41,7 @@ class App extends Component{
                         <a className="navbar-brand text-gray-100" href="index.html">Covid19WorldMap</a>
                     </div>
                 </nav>
-                <div className="container-vspace-2">
+                <div className="container-vspace-4">
 
                 </div>
                 <div>

@@ -11443,6 +11443,9 @@ button.bg-danger-soft:focus {
 .overflow-hidden {
   overflow: hidden !important;
 }
+.overflow-scrolling-touch{
+  overflow-scrolling: touch !important;
+}
 
 .position-static {
   position: static !important;
