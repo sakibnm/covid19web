@@ -22,6 +22,8 @@ class App extends Component{
         dataList: [],
         itemList: [Item],
         selectedItem: "",
+        showing: true,
+        buttonText: "Hide Map"
     }
 
     callbackSelectedCountry = (selectedItemData) => {
@@ -45,6 +47,13 @@ class App extends Component{
 
     render() {
         console.log(this.state.selectedItem)
+        const handleToggle = (showing)=>{
+            {
+                showing? this.setState({ buttonText: "Show Map" }):
+                    this.setState({ buttonText: "Hide Map" })
+            }
+            this.setState({ showing: !showing })
+        };
         return (
             <div id= "layoutDefault_content" className="App">
                 <nav className="navbar navbar-marketing navbar-expand-lg fixed-top navbar-red">
@@ -56,6 +65,9 @@ class App extends Component{
 
                 </div>
                 <div className="container">
+                    <h3>Search the country,</h3>
+                </div>
+                <div className="container">
                     {this.state.isFetching ?
                         <SearchEmptyBar/>:
                         <SearchBar callBackSearchCountry = {this.callbackSearchCountry} itemList={this.state.itemList}></SearchBar>
@@ -65,7 +77,14 @@ class App extends Component{
 
                 </div>
                 <div className="container">
-                    <h3>Please select a country on the map for stats</h3>
+                    <h3>Or, use the map select country</h3>
+                </div>
+                <div className="container">
+                    <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation" onClick={() => handleToggle(this.state.showing)}>{this.state.buttonText}</button>
+                    {/*{ showing*/}
+                    {/*    ? <div>This is visible</div>*/}
+                    {/*    : null*/}
+                    {/*}*/}
                 </div>
                 <div id="loaderContainer">
                     {this.state.isFetching ?
@@ -82,9 +101,14 @@ class App extends Component{
                     }
                 </div>
                 <div className="container">
-                    {this.state.isFetching ?
-                        <LoadEmptyMap/>
-                        : <LoadMap callBackCountry = {this.callbackSelectedCountry} itemList={this.state.itemList}/>
+                    {/*{this.state.isFetching?*/}
+                    {/*    <LoadEmptyMap/>*/}
+                    {/*    : <LoadMap callBackCountry = {this.callbackSelectedCountry} itemList={this.state.itemList}/>*/}
+                    {/*}*/}
+                    {!this.state.showing?
+                        <div/>:this.state.isFetching?<LoadEmptyMap/>
+                            : <LoadMap callBackCountry = {this.callbackSelectedCountry} itemList={this.state.itemList}/>
+
                     }
                 </div>
                 <div id="vitalContainer">

@@ -5,8 +5,9 @@ class LoadEmptyMap extends Component {
 
     render() {
         return(
-            <div id="map" className="layoutDefault_map">
-                <div>
+            <div id="mapContainer">
+
+                <div id="map">
                     <VectorMap
                         map={"world_mill"}
                         backgroundColor="" //change it to ocean blue: #0077be
