@@ -11,8 +11,8 @@ class LoadEmptyMap extends Component {
                         map={"world_mill"}
                         backgroundColor="" //change it to ocean blue: #0077be
                         containerStyle={{
-                            width: "960px",
-                            height: "520px"
+                            width: "100%",
+                            height: "100%"
                         }}
                         containerClassName="map"
                         regionStyle={{

@@ -17712,20 +17712,14 @@ body {
   min-height: 100vh;
   height: fit-content;
 }
-#map{
-  display: -webkit-flex;
+#mapContainer{
+  /*display: -webkit-flex;*/
   -webkit-box-align: center;
-;
-  min-width: 960px;
-  -webkit-overflow-scrolling: auto;
-}
-.mapContainer{
-  display: -webkit-flex;
-  -webkit-box-align: center;
-  ;
   width: 100%;
-  overflow-x: scroll;
+  min-height: 320px;
+  /*-webkit-overflow-scrolling: auto;*/
 }
+
 #layoutDefault #layoutDefault_footer {
   min-width: 0;
 }
@@ -17735,6 +17729,7 @@ body {
   overflow-x: scroll;
   margin-left: 2rem;
   margin-right: 2rem;
+  width: 100%;
   float: inside;
 
 }
