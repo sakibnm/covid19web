@@ -11444,6 +11444,9 @@ button.bg-danger-soft:focus {
   overflow: hidden !important;
 }
 .overflow-scrolling-touch{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
   overflow-scrolling: touch !important;
 }
 
@@ -17709,8 +17712,17 @@ body {
   min-height: 100vh;
   height: fit-content;
 }
+#map{
+  display: -webkit-flex;
+  -webkit-box-align: center;
+;
+  min-width: 960px;
+  -webkit-overflow-scrolling: auto;
+}
 .mapContainer{
   display: -webkit-flex;
+  -webkit-box-align: center;
+  ;
   min-width: 960px;
 }
 #layoutDefault #layoutDefault_footer {
@@ -17718,7 +17730,12 @@ body {
 }
 
 .layoutDefault_map{
-  overflow: paged-x;
+  display: inline-block;
+  overflow-x: scroll;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  float: inside;
+
 }
 @-webkit-keyframes fadeInUp {
   0% {

@@ -40,11 +40,11 @@ class LoadMap extends Component {
         };
 
         return(
-            <div id="map" className="layoutDefault_map overflow-auto">
+            <div id="map" className="layoutDefault_map">
                 <div>
 
                 </div>
-                <VectorMap className="overflow-scrolling-touch"
+                <VectorMap
                     map={"world_mill"}
 
                     backgroundColor="" //change it to ocean blue: #0077be
