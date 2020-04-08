@@ -5,11 +5,6 @@ class VitalStats extends Component {
     state = {
         item: Item
     }
-
-    constructor(props, context) {
-        super(props, context);
-    }
-
     render() {
         this.state.item = this.props.itemSend;
         // let confirmedCases = this.state.item.getConfirmed();
@@ -33,7 +28,7 @@ class VitalStats extends Component {
                             >
                                 <div className="card-body p-3">
                                     <div className="card-title small mb-0">
-                                        <bold>Confirmed Cases</bold>
+                                        <h4>Confirmed Cases</h4>
                                     </div>
                                     <div>
                                         {this.state.item.confirmed}
@@ -47,7 +42,7 @@ class VitalStats extends Component {
                             >
                                 <div className="card-body p-3">
                                     <div className="card-title small mb-0">
-                                        <bold>Deaths</bold>
+                                        <h4>Deaths</h4>
                                     </div>
                                     <div>
                                         {this.state.item.deaths}
@@ -61,7 +56,7 @@ class VitalStats extends Component {
                             >
                                 <div className="card-body p-3">
                                     <div className="card-title small mb-0">
-                                        <bold>Recovered</bold>
+                                        <h4>Recovered</h4>
                                     </div>
                                     <div>
                                         {this.state.item.recovered}

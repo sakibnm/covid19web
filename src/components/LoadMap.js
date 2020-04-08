@@ -2,26 +2,27 @@ import React, {Component} from 'react';
 import { VectorMap } from "react-jvectormap"
 
 class LoadMap extends Component {
-    itemList;
-    constructor(props, context) {
-        super(props, context);
-        this.itemList = props.itemList
-    }
     sendCountry = (country) => {
         this.props.callBackCountry(country);
     }
 
     state = {
         mapData: {},
-        countries: []
+        countries: [],
+        itemList: this.props.itemList
     }
 
+
+
     render() {
+        console.log(this.state.itemList)
         const { getCode, getName } = require('country-list');
 
 
-        for (var i=0;i<this.itemList.length;i++){
-            let item = this.itemList[i];
+        for (var i=0;i<this.state.itemList.length;i++){
+            let item = this.state.itemList[i];
+            console.log(this.state.itemList)
+            // this.setState({...this.state, isFetching: false,itemList: this.itemList})
             this.state.mapData[getCode(item.getCountry())] = item.getConfirmed()
             this.state.countries[i] = getCode(item.getCountry())
         }
@@ -29,8 +30,8 @@ class LoadMap extends Component {
 
         const handleClick = (e, countryCode) => {
             // console.log(selectedRegions)
-            for (var i=0;i< this.itemList.length;i++){
-                let item = this.itemList[i]
+            for (var i=0;i< this.state.itemList.length;i++){
+                let item = this.state.itemList[i]
                 if (getCode(item.getCountry()) === countryCode){
                     this.sendCountry(item)
                 }
@@ -39,7 +40,10 @@ class LoadMap extends Component {
         };
 
         return(
-            <div className="layoutDefault_content">
+            <div id="map" className="layoutDefault_map">
+                <div>
+
+                </div>
                 <VectorMap
                     map={"world_mill"}
                     backgroundColor="" //change it to ocean blue: #0077be
@@ -73,13 +77,14 @@ class LoadMap extends Component {
                         regions: [
                             {
                                 values: this.state.mapData, //this is your data
-                                scale: ["#ffd5d1", "#ff0001"], //your color game's here
+                                scale: ["#fff9c6", "#ff002a"], //your color game's here
                                 normalizeFunction: "polynomial"
                             }
                         ]
                     }}
                     zoomOnScroll = {true}
                     zoomAnimate={true}
+
                     // labels={
                     //     {
                     //         regions: {

@@ -593,6 +593,22 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+.container-vspace-4 {
+  width: 100%;
+  padding-right: 1.5rem;
+  padding-bottom: 4rem;
+  padding-left: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container-vspace-2 {
+  width: 100%;
+  padding-right: 1.5rem;
+  padding-bottom: 2rem;
+  padding-left: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -17682,12 +17698,25 @@ body {
   height: fit-content;
 }
 #layoutDefault #layoutDefault_content {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  min-height: 100vh;
   height: fit-content;
+}
+.mapContainer{
+  display: -webkit-flex;
+  min-width: 960px;
 }
 #layoutDefault #layoutDefault_footer {
   min-width: 0;
 }
 
+.layoutDefault_map{
+  overflow: paged-x;
+}
 @-webkit-keyframes fadeInUp {
   0% {
     opacity: 0;

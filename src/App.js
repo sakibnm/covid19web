@@ -4,6 +4,7 @@ import './App.css';
 import SkeletonLoader from "tiny-skeleton-loader-react";
 import Item from "./components/Item";
 import VitalStats from "./components/VitalStats";
+import LoadEmptyMap from "./components/LoadEmptyMap";
 
 
 class App extends Component{
@@ -37,27 +38,36 @@ class App extends Component{
             <div id= "layoutDefault_content" className="App">
                 <nav className="navbar navbar-marketing navbar-expand-lg fixed-top navbar-red">
                     <div className="container">
-                        <a className="navbar-brand text-gray-100" href="index.html">Covid19WorldMap</a><button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation"><i className="fa fa-bars"></i></button>
+                        <a className="navbar-brand text-gray-100" href="index.html">Covid19WorldMap</a>
                     </div>
                 </nav>
-                <div className="container-vspace-8">
+                <div className="container-vspace-2">
 
+                </div>
+                <div>
+                    <h3>Please select a country on the map for stats</h3>
+                </div>
+                <div id="loaderContainer">
+                    {this.state.isFetching ?
+                        <SkeletonLoader
+                            containerStyle={{
+                                width: "fit-content",
+                                height: "100%",
+                                "text-align": "center",
+                                float: "center"
+                            }}
+                        />
+                        :
+                        <div/>
+                    }
                 </div>
                 <div id="mapContainer">
                     {this.state.isFetching ?
-                        <SkeletonLoader
-                            containerStyle={{
-                                width: "fit-content",
-                                height: "100%",
-                                "text-align": "center",
-                                float: "center"
-                            }}
-                        />
-                        :
-                        <LoadMap callBackCountry = {this.callbackSelectedCountry} itemList={this.state.itemList}/>
-
-
+                        <LoadEmptyMap/>
+                        : <LoadMap callBackCountry = {this.callbackSelectedCountry} itemList={this.state.itemList}/>
                     }
+                </div>
+                <div id="vitalContainer">
                     {this.state.isFetching ?
                         <SkeletonLoader
                             containerStyle={{
@@ -68,10 +78,10 @@ class App extends Component{
                             }}
                         />
                         :
-
                         <VitalStats itemSend = {this.state.selectedItem}></VitalStats>
                     }
                 </div>
+                <div>{console.log(this.state.itemList)}</div>
 
 
             </div>
@@ -346,12 +356,12 @@ class App extends Component{
                     }
                     this.itemList.push(item)
                 });
-                console.log(this.itemList)
+                // console.log(this.itemList)
                 this.setState({...this.state, isFetching: false,itemList: this.itemList})
             }).then(itemsArray => {
-            this.state.itemList = this.itemList;
+            // this.state.itemList = this.itemList;
+            console.log(this.state.itemList)
             this.state.isFetching = false;
-            return "";
         })
     }
 }
