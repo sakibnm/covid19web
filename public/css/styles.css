@@ -17713,16 +17713,17 @@ body {
   height: fit-content;
 }
 #mapContainer{
-  /*display: -webkit-flex;*/
+  display: -webkit-flex;
   -webkit-box-align: center;
   width: 100%;
   min-height: 320px;
-  overflow: scroll;
+  overflow: auto;
+  margin-inside: 3rem;
   /*-webkit-overflow-scrolling: auto;*/
 }
 #map{
+  display: -webkit-flex;
   width: 960px;
-  height: 400px;
 }
 
 #layoutDefault #layoutDefault_footer {

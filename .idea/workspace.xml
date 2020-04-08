@@ -4,8 +4,7 @@
     <list default="true" id="1060a7f0-ff75-45e5-9c24-8d4656fda3c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoadEmptyMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoadEmptyMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoadMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoadMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +82,7 @@
       <workItem from="1586221434439" duration="12977000" />
       <workItem from="1586298815973" duration="18000" />
       <workItem from="1586298900498" duration="2304000" />
-      <workItem from="1586303344493" duration="12485000" />
+      <workItem from="1586303344493" duration="12973000" />
     </task>
     <task id="LOCAL-00001" summary="Pre-ALPHA">
       <created>1586231877288</created>
@@ -218,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586363020174</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Pre-alpha 0.2: Map on Phone screen should display fine...">
+      <created>1586363565278</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1586363565278</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,10 +249,10 @@
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
     <state x="1634" y="460" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1366@0.23.2560.1366" timestamp="1586219251554" />
-    <state x="1496" y="309" key="CommitChangelistDialog2" timestamp="1586363019938">
+    <state x="1496" y="309" key="CommitChangelistDialog2" timestamp="1586363564848">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
-    <state x="1496" y="309" key="CommitChangelistDialog2/0.23.2560.1366@0.23.2560.1366" timestamp="1586363019938" />
+    <state x="1496" y="309" key="CommitChangelistDialog2/0.23.2560.1366@0.23.2560.1366" timestamp="1586363564848" />
     <state x="1768" y="607" key="Github.ShareDialog" timestamp="1586231966780">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
@@ -267,10 +273,10 @@
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
     <state width="1295" height="392" key="GridCell.Tab.0.right/0.23.2560.1366@0.23.2560.1366" timestamp="1586363378410" />
-    <state x="1502" y="435" key="Vcs.Push.Dialog.v2" timestamp="1586363021822">
+    <state x="1502" y="435" key="Vcs.Push.Dialog.v2" timestamp="1586363567288">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>
-    <state x="1502" y="435" key="Vcs.Push.Dialog.v2/0.23.2560.1366@0.23.2560.1366" timestamp="1586363021822" />
+    <state x="1502" y="435" key="Vcs.Push.Dialog.v2/0.23.2560.1366@0.23.2560.1366" timestamp="1586363567288" />
     <state x="1561" y="336" width="670" height="676" key="search.everywhere.popup" timestamp="1586217629042">
       <screen x="0" y="23" width="2560" height="1366" />
     </state>

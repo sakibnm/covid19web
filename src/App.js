@@ -44,7 +44,7 @@ class App extends Component{
                 <div className="container-vspace-4">
 
                 </div>
-                <div>
+                <div className="container">
                     <h3>Please select a country on the map for stats</h3>
                 </div>
                 <div id="loaderContainer">
