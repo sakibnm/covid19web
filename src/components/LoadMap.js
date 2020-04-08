@@ -18,6 +18,7 @@ class LoadMap extends Component {
         console.log(this.state.itemList)
         const { getCode, getName } = require('country-list');
 
+        setTimeout(()=> { Array.from(document.getElementsByClassName("jvectormap-tip")).forEach((el) => { el.style.display = 'none' }); },100);
 
         for (var i=0;i<this.state.itemList.length;i++){
             let item = this.state.itemList[i];
@@ -36,7 +37,6 @@ class LoadMap extends Component {
                     this.sendCountry(item)
                 }
             }
-
         };
 
         return(
@@ -46,11 +46,13 @@ class LoadMap extends Component {
                 </div>
                 <VectorMap
                     map={"world_mill"}
+
                     backgroundColor="" //change it to ocean blue: #0077be
                     containerStyle={{
                         width: "100%",
                         height: "400px"
                     }}
+
                     onRegionClick={handleClick} //gets the country code
                     containerClassName="map"
                     regionStyle={{
