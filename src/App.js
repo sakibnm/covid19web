@@ -77,7 +77,7 @@ class App extends Component{
 
                 </div>
                 <div className="container">
-                    <h3>Or, use the map select country</h3>
+                    <h3>Or, use the map to select country</h3>
                 </div>
                 <div className="container">
                     <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation" onClick={() => handleToggle(this.state.showing)}>{this.state.buttonText}</button>
