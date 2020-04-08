@@ -40,17 +40,17 @@ class LoadMap extends Component {
         };
 
         return(
-            <div id="map" className="layoutDefault_map">
+            <div id="map" className="layoutDefault_map overflow-auto">
                 <div>
 
                 </div>
-                <VectorMap
+                <VectorMap className="overflow-hidden"
                     map={"world_mill"}
 
                     backgroundColor="" //change it to ocean blue: #0077be
                     containerStyle={{
-                        width: "100%",
-                        height: "400px"
+                        width: "960px",
+                        height: "520px"
                     }}
 
                     onRegionClick={handleClick} //gets the country code

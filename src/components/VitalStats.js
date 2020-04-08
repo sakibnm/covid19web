@@ -21,6 +21,7 @@ class VitalStats extends Component {
                 <div className="float-left"><FeatherIcon className="icon-stack-heading" style={{color:"red"}}icon="alert-triangle"
                                                          size={96}></FeatherIcon></div>
                 <div className="mb-4" style={{fontWeight: "bold", color:"red"}}><font size="5">Current stats</font></div>
+                <div className="ml-4" style={{fontWeight: "bold", color:"blue"}}><font size="4">{this.state.item.country}</font></div>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4 mb-5 mb-lg-n10">
