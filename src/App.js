@@ -128,9 +128,11 @@ class App extends Component{
                             </div>
                         )}
                     ></Tooltip> */}
-                    <div className="floatingTip">
-                        <h3>{this.state.hoveredItem}</h3>
+                    <div className="floatingTip card card-cust-1">
+                        <h2>{this.state.hoveredItem}</h2>
                     </div>
+                    
+                
                     
                 </div>
                 <div id="vitalContainer">
