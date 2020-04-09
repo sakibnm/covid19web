@@ -503,7 +503,13 @@ mark,
 .blockquote-footer::before {
   content: "— ";
 }
-
+.floatingTip{
+  width:100%;
+  height:100px;
+  background:"F8F8F7";
+  text-align: center;
+  display:block;
+}
 .img-fluid {
   max-width: 100%;
   height: auto;

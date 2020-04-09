@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, setState} from 'react';
 import LoadMap from './components/LoadMap';
 import './App.css';
 import SkeletonLoader from "tiny-skeleton-loader-react";
@@ -8,12 +8,15 @@ import VitalStats from "./components/VitalStats";
 import LoadEmptyMap from "./components/LoadEmptyMap";
 import SearchBar from "./components/SearchBar";
 import SearchEmptyBar from "./components/SearchEmptyBar";
+import 'react-tippy/dist/tippy.css'
 
+import {Tooltip,} from 'react-tippy';
+
+// const [hoveredItem, setState] = useState("")
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
 styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
 document.head.appendChild(styleLink);
-
 class App extends Component{
     state = {
         mapData : [],
@@ -23,11 +26,14 @@ class App extends Component{
         itemList: [Item],
         selectedItem: "",
         showing: true,
-        buttonText: "Hide Map"
+        buttonText: "Hide Map",
+        hoveredItem: ""
     }
 
     callbackSelectedCountry = (selectedItemData) => {
-        this.setState({selectedItem: selectedItemData})
+        this.setState({hoveredItem: selectedItemData})
+        // console.log(selectedItemData)
+
     }
 
     callbackSearchCountry = (searchedItemData) => {
@@ -86,6 +92,7 @@ class App extends Component{
                     {/*    : null*/}
                     {/*}*/}
                 </div>
+                
                 <div id="loaderContainer">
                     {this.state.isFetching ?
                         <SkeletonLoader
@@ -110,6 +117,21 @@ class App extends Component{
                             : <LoadMap callBackCountry = {this.callbackSelectedCountry} itemList={this.state.itemList}/>
 
                     }
+                    {/* {console.log(this.state.hoveredItem)} */}
+                    {/* <Tooltip
+                    trigger="mouseenter"
+                        html={(
+                            <div>
+                            <strong>
+                                {this.state.hoveredItem}
+                            </strong>
+                            </div>
+                        )}
+                    ></Tooltip> */}
+                    <div className="floatingTip">
+                        <h3>{this.state.hoveredItem}</h3>
+                    </div>
+                    
                 </div>
                 <div id="vitalContainer">
                     {this.state.isFetching ?
@@ -126,7 +148,6 @@ class App extends Component{
                     }
                 </div>
                 {/*<div>{console.log(this.state.itemList)}</div>*/}
-
 
             </div>
         );
