@@ -21,9 +21,9 @@ class VitalStats extends Component {
                             >
                                 <div className="card-body p-3">
                                     <div className="card-title small mb-0">
-                                        <h4>Confirmed Cases</h4>
+                                        <h4 style={{color: "orange"}}>Confirmed Cases</h4>
                                     </div>
-                                    <div>
+                                    <div style={{color: "orange"}}>
                                         {this.state.item.confirmed}
                                     </div>
                                 </div>
@@ -35,9 +35,9 @@ class VitalStats extends Component {
                             >
                                 <div className="card-body p-3">
                                     <div className="card-title small mb-0">
-                                        <h4>Deaths</h4>
+                                        <h4 style={{color: "red"}}>Deaths</h4>
                                     </div>
-                                    <div>
+                                    <div style={{color: "red"}}>
                                         {this.state.item.deaths}
                                     </div>
                                 </div>
@@ -49,9 +49,9 @@ class VitalStats extends Component {
                             >
                                 <div className="card-body p-3">
                                     <div className="card-title small mb-0">
-                                        <h4>Recovered</h4>
+                                        <h4 style={{color: "green"}}>Recovered</h4>
                                     </div>
-                                    <div>
+                                    <div style={{color: "green"}}>
                                         {this.state.item.recovered}
                                     </div>
                                 </div>

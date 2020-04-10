@@ -90,10 +90,7 @@ class App extends Component{
                 <div className="container-vspace-2">
 
                 </div>
-                <div className="container">
-                    <h3>Or, use the map to select country</h3>
-                </div>
-                
+                                
                 <div id="loaderContainer">
                     {this.state.isFetching ?
                         <SkeletonLoader
@@ -111,7 +108,7 @@ class App extends Component{
                 <div className="container">
                     <div className="floatingTip card card-cust-1">
                         {this.state.hoveredItem.country?
-                        <h2>{this.state.hoveredItem.country}</h2>:
+                        <h2 style={{color: "blue"}}>{this.state.hoveredItem.country}</h2>:
                         <h2></h2>}
                     </div>
                     <div id="vitalContainer">
@@ -130,6 +127,9 @@ class App extends Component{
                     </div>
                     <div className="container-vspace-1">
 
+                    </div>
+                    <div className="container">
+                        <h3>Or, use the map to select a country</h3>
                     </div>
                     <div>
                         <button className="navbar-toggler container" onClick={() => handleToggle(this.state.showing)}>{this.state.buttonText}</button>
