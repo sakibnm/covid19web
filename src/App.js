@@ -128,7 +128,7 @@ class App extends Component{
                             <VitalStats itemSend = {this.state.hoveredItem}></VitalStats>
                         }
                     </div>
-                    <div className="container-vspace-2">
+                    <div className="container-vspace-1">
 
                     </div>
                     <div>
