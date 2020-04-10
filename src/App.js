@@ -153,6 +153,9 @@ class App extends Component{
                         <VitalStats itemSend = {this.state.selectedItem}></VitalStats>
                     }
                 </div>
+                <div className="container-vspace-8">
+
+                </div>
                 {/*<div>{console.log(this.state.itemList)}</div>*/}
 
             </div>
