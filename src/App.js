@@ -142,14 +142,16 @@ class App extends Component{
                     {/*    <LoadEmptyMap/>*/}
                     {/*    : <LoadMap callBackCountry = {this.callbackSelectedCountry} itemList={this.state.itemList}/>*/}
                     {/*}*/}
-                    {!this.state.showing?
-                        <div/>:this.state.isFetching?<LoadEmptyMap/>
-                            : 
-                            <div className="mapContainer">
-                                <LoadMap callbackSelectCountry = {this.callbackSelectedCountry} callBackCountry = {this.callbackHoveredCountry} itemList={this.state.itemList}/>
-                            </div>
+                    <div className="mapContainer">
+                        {!this.state.showing?
+                            <div/>:this.state.isFetching?<LoadEmptyMap/>
+                                : 
+                                
+                                    <LoadMap callbackSelectCountry = {this.callbackSelectedCountry} callBackCountry = {this.callbackHoveredCountry} itemList={this.state.itemList}/>
+                                
 
-                    }
+                        }
+                    </div>
                     {/* {console.log(this.state.hoveredItem)} */}
                     {/* <Tooltip
                     trigger="mouseenter"
