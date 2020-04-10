@@ -87,18 +87,11 @@ class App extends Component{
                         <SearchBar callBackSearchCountry = {this.callbackSearchCountry} itemList={this.state.itemList}></SearchBar>
                     }
                 </div>
-                <div className="container-vspace-4">
+                <div className="container-vspace-2">
 
                 </div>
                 <div className="container">
                     <h3>Or, use the map to select country</h3>
-                </div>
-                <div className="container">
-                    <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation" onClick={() => handleToggle(this.state.showing)}>{this.state.buttonText}</button>
-                    {/*{ showing*/}
-                    {/*    ? <div>This is visible</div>*/}
-                    {/*    : null*/}
-                    {/*}*/}
                 </div>
                 
                 <div id="loaderContainer">
@@ -135,13 +128,26 @@ class App extends Component{
                             <VitalStats itemSend = {this.state.hoveredItem}></VitalStats>
                         }
                     </div>
+                    <div className="container-vspace-2">
+
+                    </div>
+                    <div>
+                        <button className="navbar-toggler container" onClick={() => handleToggle(this.state.showing)}>{this.state.buttonText}</button>
+                        {/*{ showing*/}
+                        {/*    ? <div>This is visible</div>*/}
+                        {/*    : null*/}
+                        {/*}*/}
+                    </div>
                     {/*{this.state.isFetching?*/}
                     {/*    <LoadEmptyMap/>*/}
                     {/*    : <LoadMap callBackCountry = {this.callbackSelectedCountry} itemList={this.state.itemList}/>*/}
                     {/*}*/}
                     {!this.state.showing?
                         <div/>:this.state.isFetching?<LoadEmptyMap/>
-                            : <LoadMap callbackSelectCountry = {this.callbackSelectedCountry} callBackCountry = {this.callbackHoveredCountry} itemList={this.state.itemList}/>
+                            : 
+                            <div className="mapContainer">
+                                <LoadMap callbackSelectCountry = {this.callbackSelectedCountry} callBackCountry = {this.callbackHoveredCountry} itemList={this.state.itemList}/>
+                            </div>
 
                     }
                     {/* {console.log(this.state.hoveredItem)} */}

@@ -17749,14 +17749,10 @@ body {
   min-height: 100vh;
   height: fit-content;
 }
-#mapContainer{
-  display: -webkit-flex;
-  -webkit-box-align: center;
+.mapContainer{
+  height: 520px;
   width: 100%;
-  height: fit-content;
-  overflow: auto;
-  margin-inside: 3rem;
-  /*-webkit-overflow-scrolling: auto;*/
+  overflow: hidden;
 }
 #map{
   display: -webkit-flex;
