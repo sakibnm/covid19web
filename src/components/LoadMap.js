@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import { Graticule,ZoomableGroup, ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { scaleQuantize, scaleSqrt, scaleLog, scaleBand, scaleLinear, scaleSequential, scaleQuantile, scaleOrdinal } from "d3-scale";
+import d3 from "d3-geo-projection";
 
 const geoUrl = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 const { getCode, getName } = require('country-list');
@@ -28,6 +29,7 @@ const colorScale = scaleLog()
         return num+""
     }
   };
+  
 class LoadMap extends Component {
     
     setTooltipContent = (item) =>{
@@ -58,8 +60,8 @@ class LoadMap extends Component {
                     <ZoomableGroup>
                     <Graticule stroke="#EAEAEC" />
                         <Geographies geography={geoUrl}>
-                            {({ geographies }) =>
-                                geographies.map(geo => {
+                            {({ geographies}) =>
+                                geographies.map((geo) => {
                                     // console.log(getCode("Congo"))
                                     for(var i =0;i<this.state.itemList.length;i++){
                                         if(this.state.itemList[i].country!="Antarctica" || this.state.itemList[i].country!="Tajikistan")
@@ -78,18 +80,21 @@ class LoadMap extends Component {
                                             fill={
                                                 colorScale(this.state.cur ? this.state.cur.confirmed : "#FAF0EE")
                                             }
+                                            
                                             style={{
                                                 hover: {
                                                    fill: "#362EE3",
                                                    stroke: "#607D8B",
                                                    strokeWidth: 1,
                                                    outline: "none",
+                                                   transition: "all 250ms"
                                                 },
                                                 pressed: {
                                                    fill: "#362EE3",
                                                    stroke: "#607D8B",
                                                    strokeWidth: 1,
                                                    outline: "none",
+                                                   transition: "all 250ms"
                                                 }
                                             }}
                                             stroke="#EAEAEC"

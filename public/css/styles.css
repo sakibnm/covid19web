@@ -17750,14 +17750,16 @@ body {
   height: fit-content;
 }
 .mapContainer{
-  height: 520px;
+  height: fit-content;
   width: 100%;
   overflow: hidden;
+  display: block;
+  position: relative;
+  padding: 2rem;
+  z-index: 4;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
 }
-#map{
-  display: -webkit-flex;
-  width: 960px;
-}
+
 
 #layoutDefault #layoutDefault_footer {
   min-width: 0;
