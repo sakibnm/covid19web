@@ -170,6 +170,10 @@ class App extends Component{
 
                 </div>
                 {/*<div>{console.log(this.state.itemList)}</div>*/}
+                <div className="container-vspace-8">
+
+                </div>
+                <div>Data sources: <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank">CDC</a>, <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank">WHO</a>, <a href="https://www.csbs.org/information-covid-19-coronavirus" target="_blank">CSBS</a>, <a href="https://coronavirus.1point3acres.com/en" target="_blank">1P3A</a>, <a href="https://www.jhu.edu/" target="_blank">JHU</a>.</div>
 
             </div>
         );
