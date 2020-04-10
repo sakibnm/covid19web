@@ -43,13 +43,17 @@ class SearchBar extends Component{
         this.state.items = this.props.itemList
         for (var i=0;i<this.state.items.length;i++){
             // console.log(this.state.items[i].country+" "+getCode(this.state.items[i].country).toLowerCase())
-            let dict = {}
-            dict['key'] = getCode(this.state.items[i].country).toLowerCase()
-            dict['value'] = getCode(this.state.items[i].country).toLowerCase()
-            dict['flag'] = getCode(this.state.items[i].country).toLowerCase()
-            dict['text'] = this.state.items[i].country
-            // console.log(dict)
-            this.state.countryOptions[i] = dict
+            if (this.state.items[i].country != "Antarctica") {
+                // console.log(this.state.items[i].country)
+                let dict = {}
+                dict['key'] = getCode(this.state.items[i].country).toLowerCase()
+                dict['value'] = getCode(this.state.items[i].country).toLowerCase()
+                dict['flag'] = getCode(this.state.items[i].country).toLowerCase()
+                dict['text'] = this.state.items[i].country
+                // console.log(dict)
+                this.state.countryOptions[i] = dict
+            }
+            
         }
 
         this.state.countryOptions = this.state.countryOptions.sort((a,b) => sortByText(a,b, ASC))
@@ -78,7 +82,7 @@ class SearchBar extends Component{
                 }
             }
         }
-        console.log(this.state.value)
+        // console.log(this.state.value)
         return (
             <Dropdown
                 placeholder='Select Country'

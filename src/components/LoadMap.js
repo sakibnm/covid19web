@@ -1,19 +1,19 @@
 import React, { Component, useState, useEffect } from "react";
-import { ZoomableGroup, ComposableMap, Geographies, Geography } from "react-simple-maps";
-import { scaleQuantize, scaleSqrt, scaleLog } from "d3-scale";
+import { Graticule,ZoomableGroup, ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { scaleQuantize, scaleSqrt, scaleLog, scaleBand, scaleLinear, scaleSequential, scaleQuantile, scaleOrdinal } from "d3-scale";
 
 const geoUrl = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
-
+const { getCode, getName } = require('country-list');
 const colorScale = scaleLog()
-  .domain([1, 7])
+  .domain([1, 6])
   .range([
     "#ffedea",
     "#ffcec5",
-    "#ffad9f",
+    // "#ffad9f",
     "#ff8a75",
-    "#ff5533",
+    // "#ff5533",
     "#e2492d",
-    "#be3d26",
+    // "#be3d26",
     "#9a311f",
     "#782618"
   ]);
@@ -34,6 +34,11 @@ class LoadMap extends Component {
         this.props.callBackCountry(string);
     }
 
+    setSelectedCountry = (item) =>{
+        console.log("From the Selected Country"+item.toString())
+        this.props.callbackSelectCountry(item);
+    }
+
     state = {
         mapData: {},
         countries: [],
@@ -42,6 +47,7 @@ class LoadMap extends Component {
         cur: null,
         NAME: "",
         CONFIRMED: "",
+        selectedItem: null
     }
 
 
@@ -51,31 +57,67 @@ class LoadMap extends Component {
             <div>
                 <ComposableMap >
                     <ZoomableGroup>
+                    <Graticule stroke="#EAEAEC" />
                         <Geographies geography={geoUrl}>
                             {({ geographies }) =>
                                 geographies.map(geo => {
-
+                                    // console.log(getCode("Antarctica"))
                                     for(var i =0;i<this.state.itemList.length;i++){
-                                        if(this.state.itemList[i].country === geo.properties.NAME){
+                                        if(this.state.itemList[i]!="Antarctica")if (getCode(this.state.itemList[i].country) === geo.properties.ISO_A2){
                                             this.state.cur = this.state.itemList[i];
+                                            break;
                                         }
                                     }
+                                    // console.log(this.state.cur)
                                     // console.log(this.state.cur)
                                     // const cur = this.data.find(s => s.id === geo.id);
                                     return (
                                         <Geography
                                             key={geo.rsmKey}
                                             geography={geo}
-                                            fill={colorScale(this.state.cur ? this.state.cur.confirmed : "#EEE")}
+                                            fill={
+                                                colorScale(this.state.cur ? this.state.cur.confirmed : "#FAF0EE")
+                                            }
+                                            style={{
+                                                hover: {
+                                                   fill: "#362EE3",
+                                                   stroke: "#607D8B",
+                                                   strokeWidth: 1,
+                                                   outline: "none",
+                                                },
+                                                pressed: {
+                                                   fill: "#362EE3",
+                                                   stroke: "#607D8B",
+                                                   strokeWidth: 1,
+                                                   outline: "none",
+                                                }
+                                            }}
+                                            stroke="#EAEAEC"
                                             onMouseEnter = {() => {
                                                 this.state.NAME = geo.properties.NAME;
+                                                this.state.ISO_A2 = geo.properties.ISO_A2;
+                                                // console.log(geo)
                                                 this.state.CONFIRMED = 0;
                                                 for(var i =0;i<this.state.itemList.length;i++){
-                                                    if(this.state.itemList[i].country === this.state.NAME){
+                                                    if(this.state.itemList[i]!="Antarctica")if (getCode(this.state.itemList[i].country) === this.state.ISO_A2){
                                                         this.state.CONFIRMED = this.state.itemList[i].confirmed;
+                                                        break;
+                                                    }else{
+                                                        this.state.CONFIRMED = 0
                                                     }
                                                 }
                                                 this.setTooltipContent(`${this.state.NAME} — ${rounded(this.state.CONFIRMED)}`);
+                                                // console.log(`${this.state.NAME} — ${rounded(this.state.CONFIRMED)}`)
+                                            }}
+                                            onClick = {() =>{
+                                                for(var i =0;i<this.state.itemList.length;i++){
+                                                    if(this.state.itemList[i]!="Antarctica")if (getCode(this.state.itemList[i].country) === this.state.ISO_A2){
+                                                        this.state.selectedItem = this.state.itemList[i];
+                                                        this.setSelectedCountry(this.state.selectedItem) 
+                                                        break;
+                                                    }
+                                                }  
+                                                   
                                             }}
                                         />
                                     );

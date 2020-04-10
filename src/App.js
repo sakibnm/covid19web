@@ -30,15 +30,21 @@ class App extends Component{
         hoveredItem: ""
     }
 
-    callbackSelectedCountry = (selectedItemData) => {
+    callbackHoveredCountry = (selectedItemData) => {
         this.setState({hoveredItem: selectedItemData})
+        // console.log(selectedItemData)
+
+    }
+
+    callbackSelectedCountry = (selectedItemData) => {
+        this.setState({selectedItem: selectedItemData})
         // console.log(selectedItemData)
 
     }
 
     callbackSearchCountry = (searchedItemData) => {
         this.setState({selectedItem: searchedItemData})
-        console.log(searchedItemData)
+        // console.log(searchedItemData)
     }
 
     componentDidMount() {
@@ -52,7 +58,7 @@ class App extends Component{
     }
 
     render() {
-        console.log(this.state.selectedItem)
+        // console.log(this.state.selectedItem)
         const handleToggle = (showing)=>{
             {
                 showing? this.setState({ buttonText: "Show Map" }):
@@ -108,13 +114,16 @@ class App extends Component{
                     }
                 </div>
                 <div className="container">
+                    <div className="floatingTip card card-cust-1">
+                        <h2>{this.state.hoveredItem}</h2>
+                    </div>
                     {/*{this.state.isFetching?*/}
                     {/*    <LoadEmptyMap/>*/}
                     {/*    : <LoadMap callBackCountry = {this.callbackSelectedCountry} itemList={this.state.itemList}/>*/}
                     {/*}*/}
                     {!this.state.showing?
                         <div/>:this.state.isFetching?<LoadEmptyMap/>
-                            : <LoadMap callBackCountry = {this.callbackSelectedCountry} itemList={this.state.itemList}/>
+                            : <LoadMap callbackSelectCountry = {this.callbackSelectedCountry} callBackCountry = {this.callbackHoveredCountry} itemList={this.state.itemList}/>
 
                     }
                     {/* {console.log(this.state.hoveredItem)} */}
@@ -128,11 +137,6 @@ class App extends Component{
                             </div>
                         )}
                     ></Tooltip> */}
-                    <div className="floatingTip card card-cust-1">
-                        <h2>{this.state.hoveredItem}</h2>
-                    </div>
-                    
-                
                     
                 </div>
                 <div id="vitalContainer">
@@ -224,7 +228,8 @@ class App extends Component{
                             items[key].longitude,
                             items[key].last_update
                         )
-                    } else if (items[key].country === "Russia") {
+                    } 
+                    else if (items[key].country === "Russia") {
                         item = new Item(
                             items[key].id,
                             "Russian Federation",
@@ -236,7 +241,8 @@ class App extends Component{
                             items[key].longitude,
                             items[key].last_update
                         )
-                    } else if (items[key].country === "Moldova") {
+                    } 
+                    else if (items[key].country === "Moldova") {
                         item = new Item(
                             items[key].id,
                             "Moldova, Republic of",
@@ -366,6 +372,7 @@ class App extends Component{
                             items[key].longitude,
                             items[key].last_update
                         )
+                        // console.log("Tanzania found!"+item.confirmed)
                     } else if (items[key].country === "Syria") {
                         item = new Item(
                             items[key].id,
@@ -423,6 +430,7 @@ class App extends Component{
                     }
                     this.itemList.push(item)
                 });
+                this.itemList.push(new Item("0","Antarctica",0,0,0,0,"","","0"))
                 // console.log(this.itemList)
                 this.setState({...this.state, isFetching: false,itemList: this.itemList})
             }).then(itemsArray => {
