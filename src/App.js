@@ -31,8 +31,10 @@ class App extends Component{
     }
 
     callbackHoveredCountry = (selectedItemData) => {
-        this.setState({hoveredItem: selectedItemData})
+        if(selectedItemData!= null){
+            this.setState({hoveredItem: selectedItemData})
         // console.log(selectedItemData)
+        }
 
     }
 
@@ -43,8 +45,8 @@ class App extends Component{
     }
 
     callbackSearchCountry = (searchedItemData) => {
-        this.setState({selectedItem: searchedItemData})
-        // console.log(searchedItemData)
+        this.setState({hoveredItem: searchedItemData})
+        console.log(searchedItemData)
     }
 
     componentDidMount() {
@@ -115,7 +117,23 @@ class App extends Component{
                 </div>
                 <div className="container">
                     <div className="floatingTip card card-cust-1">
-                        <h2>{this.state.hoveredItem}</h2>
+                        {this.state.hoveredItem.country?
+                        <h2>{this.state.hoveredItem.country}</h2>:
+                        <h2></h2>}
+                    </div>
+                    <div id="vitalContainer">
+                        {this.state.isFetching ?
+                            <SkeletonLoader
+                                containerStyle={{
+                                    width: "fit-content",
+                                    height: "100%",
+                                    "text-align": "center",
+                                    float: "center"
+                                }}
+                            />
+                            :
+                            <VitalStats itemSend = {this.state.hoveredItem}></VitalStats>
+                        }
                     </div>
                     {/*{this.state.isFetching?*/}
                     {/*    <LoadEmptyMap/>*/}
@@ -139,20 +157,7 @@ class App extends Component{
                     ></Tooltip> */}
                     
                 </div>
-                <div id="vitalContainer">
-                    {this.state.isFetching ?
-                        <SkeletonLoader
-                            containerStyle={{
-                                width: "fit-content",
-                                height: "100%",
-                                "text-align": "center",
-                                float: "center"
-                            }}
-                        />
-                        :
-                        <VitalStats itemSend = {this.state.selectedItem}></VitalStats>
-                    }
-                </div>
+
                 <div className="container-vspace-8">
 
                 </div>
@@ -434,6 +439,7 @@ class App extends Component{
                     this.itemList.push(item)
                 });
                 this.itemList.push(new Item("0","Antarctica",0,0,0,0,"","","0"))
+                this.itemList.push(new Item("0","Tajikistan",0,0,0,0,"","","0"))
                 // console.log(this.itemList)
                 this.setState({...this.state, isFetching: false,itemList: this.itemList})
             }).then(itemsArray => {

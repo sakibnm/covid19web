@@ -30,8 +30,8 @@ const colorScale = scaleLog()
   };
 class LoadMap extends Component {
     
-    setTooltipContent = (string) =>{
-        this.props.callBackCountry(string);
+    setTooltipContent = (item) =>{
+        this.props.callBackCountry(item);
     }
 
     setSelectedCountry = (item) =>{
@@ -45,8 +45,7 @@ class LoadMap extends Component {
         itemList: this.props.itemList,
         data: [],
         cur: null,
-        NAME: "",
-        CONFIRMED: "",
+        hoveredItem: null,
         selectedItem: null
     }
 
@@ -63,10 +62,11 @@ class LoadMap extends Component {
                                 geographies.map(geo => {
                                     // console.log(getCode("Congo"))
                                     for(var i =0;i<this.state.itemList.length;i++){
-                                        if(this.state.itemList[i]!="Antarctica")if (getCode(this.state.itemList[i].country) === geo.properties.ISO_A2){
-                                            this.state.cur = this.state.itemList[i];
-                                            break;
-                                        }
+                                        if(this.state.itemList[i].country!="Antarctica" || this.state.itemList[i].country!="Tajikistan")
+                                            if (getCode(this.state.itemList[i].country) === geo.properties.ISO_A2){
+                                                this.state.cur = this.state.itemList[i];
+                                                break;
+                                            }
                                     }
                                     // console.log(this.state.cur)
                                     // console.log(this.state.cur)
@@ -93,24 +93,23 @@ class LoadMap extends Component {
                                                 }
                                             }}
                                             stroke="#EAEAEC"
-                                            onMouseEnter = {() => {
-                                                this.state.NAME = geo.properties.NAME;
+                                            onMouseEnter = {() => {                                        
                                                 this.state.ISO_A2 = geo.properties.ISO_A2;
                                                 // console.log(this.state.ISO_A3)
-                                                this.state.CONFIRMED = 0;
+                                                
                                                 for(var i =0;i<this.state.itemList.length;i++){
                                                     if(getCode(this.state.itemList[i].country)==="CG" && this.state.ISO_A2==="CD"){
-                                                        this.state.CONFIRMED = this.state.itemList[i].confirmed;
+                                                        this.state.hoveredItem = this.state.itemList[i];
                                                         break;
                                                     }
-                                                    if(this.state.itemList[i]!="Antarctica")if (getCode(this.state.itemList[i].country) === this.state.ISO_A2){
-                                                        this.state.CONFIRMED = this.state.itemList[i].confirmed;
+                                                    if(this.state.itemList[i].country!="Antarctica"|| this.state.itemList[i].country!="Tajikistan")if (getCode(this.state.itemList[i].country) === this.state.ISO_A2){
+                                                        this.state.hoveredItem = this.state.itemList[i];
                                                         break;
                                                     }else{
-                                                        this.state.CONFIRMED = 0
+                                                        this.state.hoveredItem = null
                                                     }
                                                 }
-                                                this.setTooltipContent(`${this.state.NAME} — ${rounded(this.state.CONFIRMED)}`);
+                                                this.setTooltipContent(this.state.hoveredItem);
                                                 // console.log(`${this.state.NAME} — ${rounded(this.state.CONFIRMED)}`)
                                             }}
                                             onClick = {() =>{
@@ -120,7 +119,7 @@ class LoadMap extends Component {
                                                         this.setSelectedCountry(this.state.selectedItem) 
                                                         break;
                                                     }
-                                                    if(this.state.itemList[i]!="Antarctica")if (getCode(this.state.itemList[i].country) === this.state.ISO_A2){
+                                                    if(this.state.itemList[i].country!="Antarctica" || this.state.itemList[i].country!="Tajikistan")if (getCode(this.state.itemList[i].country) === this.state.ISO_A2){
                                                         this.state.selectedItem = this.state.itemList[i];
                                                         this.setSelectedCountry(this.state.selectedItem) 
                                                         break;
