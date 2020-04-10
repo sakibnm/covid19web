@@ -61,7 +61,7 @@ class LoadMap extends Component {
                         <Geographies geography={geoUrl}>
                             {({ geographies }) =>
                                 geographies.map(geo => {
-                                    // console.log(getCode("Antarctica"))
+                                    // console.log(getCode("Congo"))
                                     for(var i =0;i<this.state.itemList.length;i++){
                                         if(this.state.itemList[i]!="Antarctica")if (getCode(this.state.itemList[i].country) === geo.properties.ISO_A2){
                                             this.state.cur = this.state.itemList[i];
@@ -96,9 +96,13 @@ class LoadMap extends Component {
                                             onMouseEnter = {() => {
                                                 this.state.NAME = geo.properties.NAME;
                                                 this.state.ISO_A2 = geo.properties.ISO_A2;
-                                                // console.log(geo)
+                                                // console.log(this.state.ISO_A3)
                                                 this.state.CONFIRMED = 0;
                                                 for(var i =0;i<this.state.itemList.length;i++){
+                                                    if(getCode(this.state.itemList[i].country)==="CG" && this.state.ISO_A2==="CD"){
+                                                        this.state.CONFIRMED = this.state.itemList[i].confirmed;
+                                                        break;
+                                                    }
                                                     if(this.state.itemList[i]!="Antarctica")if (getCode(this.state.itemList[i].country) === this.state.ISO_A2){
                                                         this.state.CONFIRMED = this.state.itemList[i].confirmed;
                                                         break;
@@ -111,6 +115,11 @@ class LoadMap extends Component {
                                             }}
                                             onClick = {() =>{
                                                 for(var i =0;i<this.state.itemList.length;i++){
+                                                    if(getCode(this.state.itemList[i].country)==="CG" && this.state.ISO_A2==="CD"){
+                                                        this.state.selectedItem = this.state.itemList[i];
+                                                        this.setSelectedCountry(this.state.selectedItem) 
+                                                        break;
+                                                    }
                                                     if(this.state.itemList[i]!="Antarctica")if (getCode(this.state.itemList[i].country) === this.state.ISO_A2){
                                                         this.state.selectedItem = this.state.itemList[i];
                                                         this.setSelectedCountry(this.state.selectedItem) 
