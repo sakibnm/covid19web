@@ -12,9 +12,9 @@ class VitalStats extends Component {
         // let recovered = this.state.item.getRecovered();
         // console.log(this.state.item.confirmed)
         return (
-            <div className="container">
+            <div>
             
-                <div className="container">
+                <div>
                     <div className="row">
                         <div className="col-lg-4 mb-5 mb-lg-n10">
                             <a className="card lift h-100" href="#!"

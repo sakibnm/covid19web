@@ -420,6 +420,11 @@ h6, .h6 {
   font-size: 1rem;
 }
 
+.vitalContainer{
+  width: 100%;
+  height: fit-content;
+}
+
 /* Tooltip container */
 .tooltip {
   position: relative;
